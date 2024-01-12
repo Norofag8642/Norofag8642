@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <body>
+    
+ 
+    <meta charset="UTF-8">
+    <meta name="duskwood8642@gmail.com">
+    <title>
+        Путeшествия по России
+    </title>
+    <style>
+        header{
+     background-color: rgb(105, 255, 158);
+    
+     padding: 0px;
+     text-align: center;
+    }
+
+nav{
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+  
+}
+nav a{
+    background-color: #333;
+    padding: 10px;
+    text-emphasis: none;
+}
+
+section{
+    padding: 20px;
+
+}
+
+footer{
+    background-color:#333;
+    color: #fff;
+    text-emphasis: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.card {
+    width: 225px;
+    min-height: 350px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+  }
+  
+  /* При наведении на карточку - меняем цвет тени */
+  .card:hover {
+    box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+  }
+  
+  .card__top {
+    flex: 0 0 220px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden; /* Скрываем, что выходит за пределы */
+  }
+  
+  /* Контейнер для картинки */
+  .card__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Встраиваем картинку в контейнер card__image */
+    transition: 0.2s;
+  }
+  
+  /* При наведении - увеличиваем картинку */
+  .card__image:hover > img {
+    transform: scale(1.1);
+  }
+  
+  /* Размещаем скидку на товар относительно изображения */
+  .card__label {
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #ff6633;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .card__bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+  }
+  
+  .card__prices {
+    display: flex;
+    margin-bottom: 10px;
+    flex: 0 0 50%; /* Размещаем цены равномерно в две колонки */
+  }
+  
+  .card__price::after {
+    content: "₽";
+    margin-left: 4px;
+    position: relative;
+  }
+  
+  .card__price--discount {
+    font-weight: 700;
+    font-size: 19px;
+    color: #414141;
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+  
+  .card__price--discount::before {
+    content: "Со скидкой";
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+  }
+  
+  .card__price--common {
+    font-weight: 400;
+    font-size: 17px;
+    color: #606060;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+  }
+  
+  .card__price--common::before {
+    content: "Обычная";
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+  }
+  
+  .card__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #414141;
+  }
+  
+  .card__title:hover {
+    color: #ff6633;
+  }
+  
+  .card__add {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 17px;
+    color: #70c05b;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #70c05b;
+    border-radius: 4px;
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: 0.2s;
+    margin-top: auto; /* Прижимаем кнопку к низу карточки */
+  }
+  
+  .card__add:hover {
+    border: 1px solid #ff6633;
+    background-color: #ff6633;
+    color: #fff;
+  }
+
+  .cards {
+  display: grid;
+  /* Автоматически заполняем на всю ширину grid-контейнера */
+  grid-template-columns: repeat(auto-fill, 225px);
+  width: 100%;
+  max-width: 1000px; /* Ширина grid-контейнера */
+  justify-content: center;
+  justify-items: center; /* Размещаем карточку по центру */
+  column-gap: 30px; /* Отступ между колонками */
+  row-gap: 40px; /* Отступ между рядами */
+  margin: 0 auto;
+}
+
+
+
+
+    </style>
+    </head>
+    <body>
+        <header>
+            <h1>Добро пожаловать на сайт путишествия по России!</h1>
+        </header>
+        <nav>
+            <a href="#about">О НАС</a>
+            <a href="#destination"> Популярные направления</a>
+            <a href="#tours">Туры и экскурсии</a>
+            <a href="contact">Конт акты</a>
+         </nav>
+       <section id="about">
+        <h2>о НАС</h2>
+        <p>О компании.
+
+            Наша компания Енот-ru. покажет вам самые дешовые, качественные и полезные 
+             маршруты по всей  России! </p>
+       </section>
+       <section id="tours">
+        <h2> Туры и экскурсии</h2>
+        <p>Внизу</p>
+       </section>
+       <section id="contact">
+        <h2> Контакты</h2>
+        <p>нет контактов</p>
+       </section>
+
+
+            <div class="card">
+                <!-- Верхняя часть -->
+                <div class="card__top">
+                  <!-- Изображение-ссылка товара -->
+                  <a href="#" class="card__image">
+                    <img src="img/photo_5433791142144626203_y.jpg" alt="img/photo_5433791142144626203_y.jpg">  
+                  
+                  </a>
+                  <!-- Скидка на товар -->
+                  <div class="card__label"></div>
+                </div>
+                <!-- Нижняя часть -->
+                <div class="card__bottom">
+                  <!-- Цены на товар (с учетом скидки и без)-->
+                  <div class="card__prices">
+                    <div class="card__price card__price--discount">Омск</div>
+                    <div class="card__price card__price--common"></div>
+                  </div>
+                  <!-- Ссылка-название товара -->
+                  <a href="#" class="card__title">Основная информация
+                    Административный центр Омской области России, расположенный на слиянии рек Иртыша и Оми, крупный культурный, спортивный и промышленный центр. Город трудовой славы.
+                    
+                    Население Омска на 2023 год составляет 1 110 836 человек. Это третий по численности… Читать ещё
+                    Административный центр Омской области России, расположенный на слиянии рек Иртыша и Оми, крупный культурный, спортивный и промышленный центр. Город трудовой славы.
+                 Омск — крупный транспортный узел: с запада на восток через город проходит железнодорожная Транссибирская магистраль, а с юга на север — судоходная река Иртыш. Скрыть
+                    Википедия
+                   
+                   </a>
+                  <!-- Кнопка добавить в корзину -->
+                  <button class="card__add">Мои туры</button>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <!-- Верхняя часть -->
+                <div class="card__top">
+                  <!-- Изображение-ссылка товара -->
+                  <a href="#" class="card__image">
+                    <img src="img/photo_5451857874830611050_y.jpg" alt="img/photo_5451857874830611050_y.jp">  
+                  
+                  </a>
+                  <!-- Скидка на товар -->
+                  <div class="card__label"></div>
+                </div>
+                <!-- Нижняя часть -->
+                <div class="card__bottom">
+                  <!-- Цены на товар (с учетом скидки и без)-->
+                  <div class="card__prices">
+                    <div class="card__price card__price--discount">Новгород</div>
+                    <div class="card__price card__price--common"></div>
+                  </div>
+                  <!-- Ссылка-название товара -->
+                  <a href="#" class="card__title">Основная информация
+                    gujfgjgdchgcdhgfdc
+                   </a>
+                  <!-- Кнопка добавить в корзину -->
+                  <button class="card__add">Мои туры</button>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <!-- Верхняя часть -->
+                <div class="card__top">
+                  <!-- Изображение-ссылка товара -->
+                  <a href="#" class="card__image">
+                    <img src="img/photo_5451857874830611051_y.jpg" alt="mg/photo_5451857874830611051_y.jpg">  
+                  
+                  </a>
+                  <!-- Скидка на товар -->
+                  <div class="card__label"></div>
+                </div>
+                <!-- Нижняя часть -->
+                <div class="card__bottom">
+                  <!-- Цены на товар (с учетом скидки и без)-->
+                  <div class="card__prices">
+                    <div class="card__price card__price--discount">Казань</div>
+                    <div class="card__price card__price--common"></div>
+                  </div>
+                  <!-- Ссылка-название товара -->
+                  <a href="#" class="card__title">Основная информация
+                    Административный центр Омской области России, расположенный на слиянии рек Иртыша и Оми, крупный культурный, спортивный и промышленный центр. Город трудовой славы.
+                    
+                    Население Омска на 2023 год составляет 1 110 836 человек. Это третий по численности… Читать ещё
+                    Административный центр Омской области России, расположенный на слиянии рек Иртыша и Оми, крупный культурный, спортивный и промышленный центр. Город трудовой славы.
+                 
+                   </a>
+                  <!-- Кнопка добавить в корзину -->
+                  <button class="card__add">Мои туры</button>
+                </div>
+              </div>
+              
+
+<!-- Сетка карточек товаров -->
+<div class="cards">
+    <!-- Карточка товара -->
+    <div class="card">
+      <!-- Карточка товара .. -->
+    </div>
+    <div class="card">
+      <!-- Карточка товара .. -->
+    </div>
+    <div class="card">
+      <!-- Карточка товара .. -->
+    </div>
+    <div class="card">
+      <!-- Карточка товара .. -->
+    </div>
+    <div class="card">
+      <!-- Карточка товара .. -->
+    </div>
+    <div class="card">
+      <!-- Карточка товара .. -->
+    </div>
+    <div class="card">
+      <!-- Карточка товара .. -->
+    </div>
+    <div class="card">
+      <!-- Карточка товара .. -->
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    
+    <div>
+         
+        <p>hggfhgfchxgfsdhyfcusac</p>
+    </div>
+    <h1>jvjhgjhgvjghjhb</h1>
+    <form action="action_page.php">
+        <div class="conteiner">
+            <h1>Регистрация</h1>
+            <p>Пожалуйста, заполните форму регистрации.</p>
+
+
+        </div>
+  
+
+  <div>
+ 
+
+<hr>
+<label for="email">
+    <b>email</b>
+</label>
+<input type="text"
+placeholder="Enter email"
+name="email"
+required>
+
+<label for="pswrepeat">
+    <b>придумайте пароль</b>
+</label>
+
+<input type="password"
+ placeholder="придумайте парол"
+ name="пароль"> 
+ <hr>
+ <p>
+    Создаваяч аккаунт  вы соглашаетесь.........
+
+ <a href="#">Безоапасность   и условия политики</a> </p>
+   
+ <button type="submit" class="регистрация"> старт</button>
+</div>
+ </form>     
+    </body>
+    
+   </body>
+
